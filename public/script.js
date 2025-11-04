@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:5000/api";
+const API_BASE = "https://event-online-hub.vercel.app/";
 
 // DOM elements
 const loginSection = document.getElementById("loginSection");
