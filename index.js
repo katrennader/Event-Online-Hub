@@ -24,7 +24,7 @@ app.use("/api/users/attendee", attendeeRouter)
 
 
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //  start server (listen)
 const start = async()=>{
