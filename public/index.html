@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🎟️ Event Online Hub </h1>
+      <nav>
+        <button id="loginBtn">Login</button>
+        <button id="registerBtn">Register</button>
+        <button id="logoutBtn" class="hidden">Logout</button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- LOGIN -->
+      <form id="loginSection">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button type="submit" id="submitLogin">Login</button>
+        <p id="loginMessage"></p>
+      </form>
+
+      <!-- REGISTER -->
+      <section id="registerSection" class="hidden">
+        <h2>Create New Account</h2>
+        <input type="text" id="regUsername" placeholder="Username" />
+        <input type="email" id="regEmail" placeholder="Email" />
+        <input type="password" id="regPassword" placeholder="Password" />
+        <select id="regRole">
+          <option value>Select Role</option>
+          <option value="Admin">Admin</option>
+          <option value="Attendee">Attendee</option>
+          <option value="Organizer">Organizer</option>
+        </select>
+        <button id="submitRegister">Register</button>
+        <p id="registerMessage"></p>
+      </section>
+
+      <!-- OTP Verification -->
+      <section id="otpSection" class="hidden">
+        <h3>Enter OTP</h3>
+        <input type="text" id="otp" placeholder="Enter OTP" />
+        <button id="verifyOtpBtn">Verify OTP</button>
+      </section>
+
+      <!-- ADMIN PANEL -->
+      <section id="adminPanelSection" class="hidden">
+        <h2>Admin Panel</h2>
+        <button id="getAllUsersBtn">Get All Users</button>
+        <!-- <section id="eventsSectionA"> -->
+          <button id="AllEventsBtn">Get All Events</button>
+          <div id="eventList"></div>
+          <div id="usersList"></div>
+        </section>
+
+        <!-- ATTENDEE PANEL -->
+        <section id="attendeePanelSection" class="hidden">
+          <h2>Attendee Panel</h2>
+          <button id="getAttendeeEventsBtn">View Available Events</button>
+          <button id="getEnrolledEventsBtn">Get Enrolled Events</button>
+          <div id="attendeeEventList"></div>
+        </section>
+        <!-- CREATE EVENT (Organizer only) -->
+        <section id="createEventSection" class="hidden">
+          <h2>Create Event (Organizer Only)</h2>
+          <input type="text" id="title" placeholder="Title" />
+          <input type="text" id="description" placeholder="Description" />
+          <input type="text" id="date" placeholder="Date (YYYY-MM-DD)" />
+          <input type="text" id="location" placeholder="Location" />
+          <input type="text" id="category" placeholder="Category" />
+          <input type="number" id="capacity" placeholder="Capacity" />
+          <button id="createEventBtn">Create</button>
+          <p id="eventMessage"></p>
+        </section>
+
+        <!-- ORGANIZER EVENTS MANAGEMENT -->
+        <section id="organizerEventsSection" class="hidden">
+          <h2>Organizer Panel</h2>
+          <button id="showCreateEventBtn">Create New Event</button>
+          <button id="getOrganizerEventsBtn">Get My Events</button>
+          <div id="organizerEventList"></div>
+        </section>
+
+        <!-- USERS MANAGEMENT (Admin only) -->
+        <section id="usersSection" class="hidden">
+          <h2>Manage Users (Admin Only)</h2>
+          <div id="getUsersList"></div>
+        </section>
+
+      </main>
+
+      <footer>
+        <p>© 2025 Event System | Developed by Katren Nader</p>
+      </footer>
+
+      <script src="script.js"></script>
+    </body>
+  </html>

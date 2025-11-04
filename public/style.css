@@ -1,0 +1,230 @@
+/* 🌟 Reset & base styles */
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #eef2f3, #d9e4f5);
+  color: #333;
+}
+
+/* 🎟️ Header */
+header {
+  background: linear-gradient(90deg, #3a3f58, #2d314a);
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  margin: 0;
+  font-weight: bold;
+  color: #ffcc00;
+  text-shadow: 0 0 10px rgba(255, 204, 0, 0.6);
+}
+
+nav button {
+  background: linear-gradient(135deg, #ffcc00, #ffb700);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #3a3f58;
+  box-shadow: 0 4px 10px rgba(255, 204, 0, 0.4);
+  margin-left: 8px;
+}
+
+nav button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(255, 204, 0, 0.5);
+}
+
+/* 🫥 Hidden */
+.hidden {
+  display: none;
+}
+
+/* 🧩 Main Layout */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding: 2rem 1rem;
+  min-height: 85vh;
+}
+
+/* ✨ Card Style (for all sections) */
+section,
+form {
+  background: #fff;
+  border-radius: 14px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 450px;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+section,
+form * {
+  position: relative;
+  z-index: 1;
+}
+
+/* 🧾 Panel Sections (wider for admin/organizer/attendee) */
+#adminPanelSection,
+#attendeePanelSection,
+#organizerEventsSection,
+#createEventSection,
+#usersSection {
+  max-width: 900px;
+  text-align: center;
+}
+
+#adminPanelSection div,
+#attendeePanelSection div,
+#organizerEventsSection div,
+#usersSection div {
+  text-align: left;
+  overflow-y: auto;
+  max-height: 400px;
+  padding-right: 0.5rem;
+}
+
+/* Titles */
+h2,
+h3 {
+  color: #3a3f58;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Inputs */
+input,
+select {
+  display: block;
+  width: 100%;
+  margin: 0.6rem 0;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fafafa;
+  font-size: 1rem;
+}
+
+input:focus,
+select:focus {
+  border-color: #ffcc00;
+  outline: none;
+  box-shadow: 0 0 6px rgba(255, 204, 0, 0.5);
+}
+
+/* ✨ Buttons */
+button {
+  background: linear-gradient(135deg, #3a3f58, #2d314a);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 5px;
+  box-shadow: 0 4px 10px rgba(58, 63, 88, 0.4);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #2d314a, #1f2234);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(58, 63, 88, 0.5);
+}
+
+/* Disabled */
+button:disabled {
+  background: #999;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* 🗂️ List Cards */
+#eventList div,
+#organizerEventList div,
+#getUsersList div,
+#usersList div {
+  background: #fdfdfd;
+  border: 1px solid #eee;
+  padding: 1rem;
+  margin: 0.6rem 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#eventList div:hover,
+#organizerEventList div:hover,
+#getUsersList div:hover,
+#usersList div:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(255, 204, 0, 0.2);
+}
+
+/* 🔐 OTP Section */
+#otpSection {
+  background: #fff8e6;
+  border: 1px solid #ffcc00;
+  box-shadow: 0 4px 10px rgba(255, 204, 0, 0.15);
+}
+
+/* ⚙️ Footer */
+footer {
+  text-align: center;
+  padding: 1.2rem;
+  background: #3a3f58;
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  margin: 0;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  nav button {
+    margin: 0.3rem;
+  }
+
+  section {
+    max-width: 95%;
+  }
+
+  main {
+    padding: 1.5rem;
+  }
+}
+
+/* Additional styles can be added below */
+
+/* Example: Highlight important buttons */
+button#importantAction {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: #fff;
+}
